@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    background-color: rgb(53, 58, 56);
+}
+
+.btn {
+    width: 90px;
+    height: 30px;
+    display: inline-block;
+    background-color: rgb(128, 173, 158);
+    text-decoration: none;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 10px;
+}
+
+.btn:hover {
+    background-color: rgb(243, 233, 139);
+}
