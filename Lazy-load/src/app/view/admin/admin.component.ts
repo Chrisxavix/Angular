@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminComponent implements OnInit {
 
+  resultadoSuma: number;
+  showSuma = false;
   constructor() { }
 
   ngOnInit() {
+  }
+
+  response($event) {
+    this.resultadoSuma = $event;
+    if (isNaN(this.resultadoSuma)) {
+      this.showSuma = false;
+    } else {
+      this.showSuma = true;
+    }
   }
 
 }

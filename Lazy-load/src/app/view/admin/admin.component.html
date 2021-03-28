@@ -5,3 +5,8 @@
     <a class="btn" [routerLink]="['/add']">Inputs</a>
     <router-outlet></router-outlet>
 </div>
+
+<h3>Decoradores Input y Output</h3>
+
+<app-componente1 (resultSum)=response($event)></app-componente1>
+<p *ngIf="showSuma">La suma es: {{resultadoSuma}}</p>
