@@ -8,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class AdminComponent implements OnInit {
 
   resultadoSuma: number;
+  resultadoInter: string;
   showSuma = false;
+  showInter = false;
   constructor() { }
 
   ngOnInit() {
@@ -23,4 +25,8 @@ export class AdminComponent implements OnInit {
     }
   }
 
+  responseInter($event) {
+    this.resultadoInter = $event;
+    this.showInter = true;
+  }
 }

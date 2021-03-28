@@ -6,7 +6,10 @@
     <router-outlet></router-outlet>
 </div>
 
-<h3>Decoradores Input y Output</h3>
+<h3>Decorador Output</h3>
 
 <app-componente1 (resultSum)=response($event)></app-componente1>
 <p *ngIf="showSuma">La suma es: {{resultadoSuma}}</p>
+
+<app-componente2 (resulInter)="responseInter($event)"></app-componente2>
+<p *ngIf="showInter">La interpolación es: {{resultadoInter}}</p>
