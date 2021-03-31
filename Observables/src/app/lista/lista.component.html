@@ -1,1 +1,6 @@
-<p>lista works!</p>
+<div>
+    <div class="card" *ngFor="let person of resultado">
+        <h3>Nombre: {{person.nombre}} {{person.apellido}}</h3>
+        <h3>Empresa: {{person.empresa}}</h3>
+    </div>
+</div>
