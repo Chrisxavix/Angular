@@ -1,0 +1,62 @@
+<app-saludo></app-saludo>
+<br>
+<app-padre></app-padre>
+<br>
+<app-eventos></app-eventos>
+<br>
+<app-suma></app-suma>
+<br>
+<app-cronometro></app-cronometro>
+<br>
+<app-calculadora></app-calculadora>
+<br>
+<section class="decoradorInput">
+    <h2>Trayendo tres veces el componente del decorador Input</h2>
+    <app-decorador-input mensaje="Mensaje 1" subtitulo="Subtitulo 1"></app-decorador-input>
+    <app-decorador-input mensaje="Mensaje 2" subtitulo="Subtitulo 2"></app-decorador-input>
+    <app-decorador-input></app-decorador-input>
+</section>
+<br>
+<div class="mainComponent">
+    <h2>Componente principal</h2>
+    <p>Trayendo el componente del decorador Input</p>
+    <p>Se usa [subtitulo]="titulos[0]" para traer un elemento del array declarado en el componenete principal</p>
+    <app-decorador-input mensaje="Mensaje 1" [subtitulo]="titulos[0]"></app-decorador-input>
+</div>
+<br>
+<app-suma-input [num1]="numero1" [num2]="numero2"></app-suma-input>
+<br>
+<section class="decoradorOutput">
+    <h2>Componente del decorador Output</h2>
+    <p>Con el click</p>
+    <p>En el parámetro $event trae el string this.alertaPulsada.emit('Desde el hijo')</p>
+    <app-decorador-output [mensaje]="titulos[2]" subtitulo="Es el cuarto" (alertaPulsada)="onAlertaPulsada($event)"></app-decorador-output>
+</section>
+<app-cronometro-output inicio="8" (terminar)=Recibiendo($event)></app-cronometro-output>
+<app-cronometro-output [inicio]="valores[1]"></app-cronometro-output>
+<section class="ngModel">
+    <h2>Componente principal</h2>
+    <input type="text" [(ngModel)]="campoTexto">
+    <br>
+    <label>{{campoTexto}}</label>
+</section>
+
+<section class="ngModelObjeto">
+    <h2>Componente principal</h2>
+    <div>
+        <input type="text" [(ngModel)]="persona.nombre">
+        <br>
+        <input type="text" [(ngModel)]="persona.apellido">
+        <br>
+        <input type="text" [(ngModel)]="persona.edad">
+    </div>
+
+    <p>Nombre {{persona.nombre}}</p>
+    <p>Apellido {{persona.apellido}}</p>
+    <p>Edad {{persona.edad}}</p>
+</section>
+<section class="comunicacion">
+    <h2>Ejemplo de comunicación</h2>
+    <app-formulario (tareaCreada)="recibiendoDatos($event)"></app-formulario>
+    <app-lista [tareas]="tareas"></app-lista>
+</section>

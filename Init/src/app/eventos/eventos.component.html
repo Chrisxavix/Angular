@@ -1,0 +1,32 @@
+<section>
+<h1>Componente Eventos</h1>
+
+<button (click)="presionar()">Sin evento</button>
+<button (click)="presionarEvent($event)">Con evento</button>
+
+<div>
+    <h2>Al seleccionar la opción tres abre un alert xD</h2>
+    <select (change)="selectItem($event)">
+        <option value="uno">Uno</option>
+        <option value="dos">Dos</option>
+        <option value="tres">Tres</option>
+    </select>
+    <p>{{ xd }}</p>
+</div>
+<p>EVento mouseenter y mouseout</p>
+<div class="pasar" (mouseenter)="pasar($event)" (mouseout)="salir($event)">
+    <p>
+        {{mensaje}}
+    </p>
+</div>
+<br><br>
+<p>Evento change</p>
+<input type="text" (change)="inputChangeItem($event)" placeholder="Type">
+<br>
+<br>
+<p>Evento input</p>
+<input type="text" (input)="inputItem($event)" placeholder="Type 2">
+<br>
+<p>Evento focus y blur</p>
+<input type="text" (focus)="focusItem($event)" (blur)="blurItem($event)" placeholder="Type 2">
+</section>

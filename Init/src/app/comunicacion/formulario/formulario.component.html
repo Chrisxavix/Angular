@@ -1,0 +1,18 @@
+<section>
+    <h2>Componente Formulario</h2>
+    <div>
+        <label>Título:</label>
+        <input type="text" [(ngModel)]="nuevaTarea.titulo">
+    </div>
+
+    <div>
+        <label>Descripción:</label>
+        <input type="text" [(ngModel)]="nuevaTarea.descripcion">
+    </div>
+
+    <button (click)="enviar()">Enviar</button>
+</section>
+
+<!-- Para verificar que va entrando los datos con json -->
+<!-- <p>Nueva Tarea</p>
+<p>{{nuevaTarea | json}}</p> -->

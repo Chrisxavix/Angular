@@ -1,0 +1,26 @@
+<section>
+    <h1>Componente saludo</h1>
+    <p>saludo works!</p>
+
+<!-- Variable definida en el ts -->
+<h2>{{mensaje}}</h2>
+
+<!-- Se visualiza en el template -->
+<p>{{ 10 * 3 }}</p>
+
+<!-- Agregar una función al botón desde el ts -->
+<button (click)="mostrarSaludo()">Hi!</button>
+
+<!-- Usando style: --- en el ts -->
+<!-- <h3 class="test">TestStyles</h3> -->
+<!-- Usando style: --- en el ts -->
+
+<!-- Contiene el id declarado en el ts, el (--item) es para diferenciar en caso de que se necesite -->
+<p id="{{identiParrafo}}--item">Párrafo para editar el contenido.</p>
+
+<!-- Otra opción, con valor exacto, sin (--item) -->
+<p [id]="identiParrafo2">Otro párrafo</p>
+
+<!-- Variable que obtiene su tipo desde el ts -->
+<input [type]="inputText">
+</section>

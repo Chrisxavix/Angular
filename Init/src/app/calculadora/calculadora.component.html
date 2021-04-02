@@ -1,0 +1,30 @@
+<section>
+    <h1>Componente Calculadora</h1>
+    <div class="calculadora">
+        <p class="resultado">
+            {{resultado}}
+        </p>
+
+        <div class="botones numeros">
+            <button (click)="concatenar($event)">1</button>
+            <button (click)="concatenar($event)">2</button>
+            <button (click)="concatenar($event)">3</button>
+            <button (click)="concatenar($event)">4</button>
+            <button (click)="concatenar($event)">5</button>
+            <button (click)="concatenar($event)">6</button>
+            <button (click)="concatenar($event)">7</button>
+            <button (click)="concatenar($event)">8</button>
+            <button (click)="concatenar($event)">9</button>
+            <button (click)="concatenar($event)">0</button>
+        </div>
+
+        <div class="botones calculos">
+            <button (click)="concatenar($event)">+</button>
+            <button (click)="concatenar($event)">-</button>
+            <button (click)="concatenar($event)">*</button>
+            <button (click)="concatenar($event)">/</button>
+            <button (click)="calcular()">=</button>
+        </div>
+        <button (click)="limpiar()">Clean</button>
+    </div>    
+</section>
