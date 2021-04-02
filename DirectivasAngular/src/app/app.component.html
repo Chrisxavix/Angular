@@ -1,0 +1,156 @@
+<section>
+  <h2>Directiva <i>[ngStyle]</i></h2>
+  <h3>Cambiar colores con: <i>[ngStyle]="propiedadesParrafo"</i></h3>
+  <p [ngStyle]="propiedadesParrafo">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eveniet!
+  </p>
+  <button (click)="color('verde')" class="verde">Verde</button>
+  <button (click)="color('rojo')" class="rojo">Rojo</button>
+  <button (click)="color('amarillo')" class="amarillo">Amarillo</button>
+</section>
+
+<section>
+  <h2>Directiva <i>[(ngModel)]</i></h2>
+  <p>Escriba el color para cambiar:</p>
+  <input type="text" [(ngModel)]="propiedadesParrafo.color">
+</section>
+
+<section>
+  <h2>Componente Semáforo</h2>
+  <h2>Directiva <i>[ngClass]</i></h2>
+  <app-semaforo></app-semaforo>
+</section>
+
+<section>
+  <h2>Directiva <i>*ngIf</i></h2>
+  <p *ngIf="mostrar">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, iure!</p>
+  <button (click)="mostrarTexto()">Mostrar / Ocultar Texto</button>
+</section>
+
+<section>
+  <h2>Directiva <i>*ngIf</i> y <i>else</i></h2>
+  <p *ngIf="valor1; else parrafoOculto">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+  <ng-template #parrafoOculto>
+    <p>Chris</p>
+  </ng-template>
+  <br>
+  <p *ngIf="valor1">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+  <p *ngIf="!valor1">Chris</p>
+  <button (click)="valoresCambian()">Mostrar / Ocultar Texto</button>
+</section>
+
+<section>
+  <h2>Directiva <i>*ngFor</i></h2>
+  <div *ngFor="let item of personas">
+    <p>Nombre: <i></i>{{item.nombre}}</p>
+    <p>Apellido: <i></i>{{item.apellido}}</p>
+    <p>Edad: <i></i>{{item.edad}}</p>
+  </div>
+
+  <h3>Visualizando en una tabla</h3>
+  <table>
+    <thead>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Edad</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of personas">
+        <td>{{item.nombre}}</td>
+        <td>{{item.apellido}}</td>
+        <td>{{item.edad}}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Directiva <i>*ngSwitch</i></h2>
+  <div [ngSwitch]="opcionNumero">
+    <p *ngSwitchCase="1">Opcion 1</p>
+    <p *ngSwitchCase="2">Opcion 2</p>
+    <p *ngSwitchCase="3">Opcion 3</p>
+    <p *ngSwitchCase="4">Opcion 4</p>
+    <p *ngSwitchDefault>Ninguna</p>
+  </div>
+  <button (click)="Seleccionar(1)">1</button>
+  <button (click)="Seleccionar(2)">2</button>
+  <button (click)="Seleccionar(3)">3</button>
+  <button (click)="Seleccionar(4)">4</button>
+  <button (click)="Seleccionar(5)">Default</button>
+</section>
+
+<section>
+  <h2>Comunicación de formulario y lista mediante el padre</h2>
+  <div class="container">
+    <div class="izquierda">
+      <app-formulario (tareaCreada)="recibiendoTareas($event)"></app-formulario>
+    </div>
+
+    <div class="derecha">
+      <app-lista [tareas]="arrayTareas"></app-lista>
+    </div>
+  </div>
+</section>
+ 
+<section>
+  <h2>Ejercicio de comunicación de componentes con @input y @Output</h2>
+  <div class="containerCaja">
+    <div class="izquierdaCaja">
+      <div class="comida">
+        <app-lista-productos titulo="Comida" [productos]="arrayComida" (productoSeleccionado)="recibirTotal($event)"></app-lista-productos>
+      </div>
+        
+      <div class="bebida">
+        <app-lista-productos titulo="Bebida" [productos]="arrayBebida" (productoSeleccionado)="recibirTotal($event)"></app-lista-productos>
+      </div>
+    </div>
+
+    <div class="derechaCaja">
+      <app-comanda [arrayProductos]="productosSeleccionados"></app-comanda>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Creación de una directiva</h2>
+  <p appSubrayado>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio, fuga!
+  </p>
+</section>
+
+<section>
+  <h2>Usando <i>@HostListener</i> dentro de la directiva creada</h2>
+  <p appSubrayado>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio, fuga!
+  </p>
+
+  <p>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio, fuga!
+  </p>
+
+  <p appSubrayado>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio, fuga!
+  </p>
+</section>
+
+<section>
+  <h2>Ejercicio de @input y @output</h2>
+  <div class="containerCompra">
+    <div class="row">
+      <app-formulario-compra (productoCreado)="recibeProductoCreado($event)"></app-formulario-compra>
+    </div>
+
+    <div class="row">
+      <div class="izquierdaCompra">
+        <app-lista-compra tituloBoton="Comprar" [productosCompra]="productosSeleccionadosCompra"
+          (elementoSelecionado)='elementSelecionado($event)'></app-lista-compra>
+      </div>
+
+      <div class="derechaCompra">
+        <app-lista-compra tituloBoton="Cancelar" [productosCompra]="productosCompradosCompra"
+          (elementoSelecionado)='elementNoSelecionado($event)'></app-lista-compra>
+      </div>
+    </div>
+  </div>
+</section>

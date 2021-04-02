@@ -1,0 +1,12 @@
+<section>
+    <div class="productos">
+        <div class="producto" *ngFor="let item of productosCompra; let indice = index">
+            <p>{{item.nombre.toUpperCase()}}</p>
+            <div>
+                <p>Cantidad: {{item.cantidada}}</p>
+                <p>Depa: {{item.departamento}}</p>
+            </div>
+            <button (click)="comprar(indice)">{{tituloBoton}}</button>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,22 @@
+.img {
+    width: 100px;
+    height: 100px;
+}
+
+.productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.producto {
+    min-width: 18%;
+    margin: 5px;
+    border: 1px solid gray;
+    text-align: center;
+    cursor: pointer;
+}
+
+.producto:hover {
+    background-color: rgb(127, 165, 127);
+}

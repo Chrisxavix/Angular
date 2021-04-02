@@ -1,0 +1,12 @@
+<section>
+    <h1>{{titulo}}</h1>
+    <div class="productos">
+        <div class="producto" *ngFor="let item of productos" (click)="seleccionarProducto(item)">
+            <img class="img" src="{{item.imgUrl}}"alt="">
+            <h3>{{item.nombre}}</h3>
+            <p>${{item.precio}}</p>
+        </div>
+    </div>
+
+    <p>Total {{total}}</p>
+</section>

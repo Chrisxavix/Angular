@@ -1,0 +1,13 @@
+.productos {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 90%;
+}
+
+.producto {
+    border: 1px solid gray;
+    padding: 10px;
+    min-width: 150px;
+}

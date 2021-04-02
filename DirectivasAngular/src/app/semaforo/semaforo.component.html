@@ -1,0 +1,17 @@
+<section>
+    <p>Con un string</p>
+    <div class="semaforo" [ngClass]="cadenaClases">
+    </div>
+</section>
+
+<section>
+    <p>Con un array</p>
+    <div class="semaforo" [ngClass]="arrayClases[0]">
+    </div>
+</section>
+
+<section>
+    <p>Cambia con el setTime</p>
+    <div [ngClass]="{semaforo: true, amarillo: (colorSeleccionado === 'a'), verde: (colorSeleccionado === 'v'), rojo: (colorSeleccionado === 'r')}">
+    </div>
+</section>

@@ -1,0 +1,24 @@
+.lista {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+}
+
+.tarea {
+    border: 1px solid black;
+    padding: 10px;
+    width: 40%;
+}
+
+.tarea h3 {
+    margin-top: 10px;
+}
+
+.completa {
+    background-color: rgb(107, 149, 165);
+}
+
+.incompleta {
+    background-color: rgb(150, 86, 86);
+}
