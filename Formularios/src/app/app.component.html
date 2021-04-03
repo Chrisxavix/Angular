@@ -1,0 +1,30 @@
+<section>
+  <div>
+    <h2>Formularios Angular</h2>
+    <div class="template">
+      <app-template></app-template>
+    </div>
+    <br><br><br>
+    <div class="model">
+      <app-model></app-model>
+    </div>
+  </div>
+</section>
+<br><br>
+<section>
+  <h2>Componentes Formulario y Lista</h2>
+
+  <div class="container">
+    <a class="btn" [routerLink]="['/new']">
+      Formulario
+    </a>
+  
+    <a class="btn" [routerLink]="['/list']">
+      Lista
+    </a>
+  </div>
+
+  <div class="rutas">
+    <router-outlet></router-outlet>
+  </div>
+</section>

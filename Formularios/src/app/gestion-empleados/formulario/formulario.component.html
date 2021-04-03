@@ -1,0 +1,58 @@
+<h1>Formulario</h1>
+<form [formGroup]="formNewEmpleado" (ngSubmit)="getDatos()">
+    <div class="form-group">
+        <label>Nombre</label>
+        <input type="text" class="form-control" formControlName="nombre">
+    </div>
+
+    <div class="error" *ngIf="formNewEmpleado.controls.nombre.errors?.required && formNewEmpleado.controls.nombre.touched">
+        El nombre es requerido.
+    </div>
+
+    <div class="form-group">
+        <label>Apellidos</label>
+        <input type="text" class="form-control" formControlName="apellidos">
+    </div>
+
+    <div class="error" *ngIf="formNewEmpleado.controls.apellidos.errors?.required && formNewEmpleado.controls.apellidos.touched">
+        El apellido es requerido.
+    </div>
+
+    <div class="form-group">
+        <label>Email</label>
+        <input type="email" class="form-control" formControlName="email">
+    </div>
+
+    <div class="form-group">
+        <label>Edad</label>
+        <input type="text" class="form-control" formControlName="edad">
+    </div>
+
+    <div class="form-group">
+        <label>Departamento</label>
+        <br>
+        <!-- Cuando se tiene un array -->
+        <!-- 
+        <option *ngFor="let item of periodos; let index = index" [value]="item.id" [selected]="index == 1" >
+            {{item.fecha_inicio}}
+        </option> 
+        -->
+        <select formControlName="departamento" class="form-control">
+            <option value="informatica" [selected]="default === informatica">Informática</option>
+            <option value="marketing">Marketing</option>
+            <option value="contabilidad">Contabilidad</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Password</label>
+        <input type="password" class="form-control" formControlName="password">
+    </div>
+
+    <div class="form-group">
+        <label>Imagen</label>
+        <input type="text" class="form-control" formControlName="imagen">
+    </div>
+
+    <input type="submit" class="btn btn-block btn-success" value="Enviar" [disabled]="!formNewEmpleado.valid">
+</form>

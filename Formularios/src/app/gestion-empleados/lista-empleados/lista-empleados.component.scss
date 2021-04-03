@@ -1,0 +1,19 @@
+.containers {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    row-gap: 5px;
+    column-gap: 5px;
+    flex-wrap: wrap;
+}
+
+.container {
+    text-align: center;
+    min-width: 20%;
+    border: 2px solid gray;
+}
+
+.img {
+    width: 150px;
+    height: 150px;
+}

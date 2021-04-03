@@ -1,0 +1,77 @@
+<h4>De tipo Model, son los más usados:</h4>
+<form [formGroup]="formulario" (ngSubmit)="save()">
+    <div class="form-group">
+        <label>Nombre</label>
+        <input type="text" class="form-control nombre" formControlName="nombre">
+    </div>
+
+    <!-- El primero verifica errores, el segundo, si enfocamos y salimos del foco sin completar -->
+    <!-- PRIMERA FORMA DE VALIDAR CON .GET -->
+    <div class="error" *ngIf="formulario.get('nombre').errors?.required && formulario.get('nombre').touched">
+        El nombre es requerido.
+    </div>
+
+    <!-- SEGUNDA FORMA, CON .CONTROLS -->
+    <!-- <div class="error" *ngIf="formulario.controls.nombre.errors?.required && formulario.controls.nombre.touched">
+        El nombre es requerido.
+    </div> -->
+
+    <!-- Con {{formulario.controls.nombre.errors.minlength.requiredLength}}, se cambia de manera dinámica el mensaje de error, cuando se hace un cambio en el ts, o declaración de atributos. -->
+    <div class="error" *ngIf="formulario.controls.nombre.errors?.minlength && formulario.controls.nombre.touched">
+        El nombre debe tener al menos {{formulario.controls.nombre.errors.minlength.requiredLength}} caracteres.
+    </div>
+
+    <div class="error" *ngIf="formulario.controls.nombre.errors?.maxlength && formulario.controls.nombre.touched">
+        El nombre debe tener menos de {{formulario.controls.nombre.errors.maxlength.requiredLength}} caracteres.
+    </div>
+
+    <!-- Otra Forma de Validar -->
+    <!-- <div *ngIf="formulario.controls.nombre.touched && !formulario.controls.nombre.valid">
+        <p>Mínimo de tres palabras</p>
+    </div> -->
+
+    <div class="form-group">
+        <label>Apellidos</label>
+        <input type="text" class="form-control" formControlName="apellidos">
+    </div>
+
+    <div class="form-group">
+        <label>Edad</label>
+        <input type="text" class="form-control" formControlName="edad">
+    </div>
+
+    <div class="error" *ngIf="formulario.controls.edad.errors?.edadvalidar && formulario.controls.edad.touched">
+        La edad debe ser entre {{formulario.controls.edad.errors.edadvalidar.minedad}} y {{formulario.controls.edad.errors.edadvalidar.maxedad}} años.
+    </div>
+
+    <div class="form-group">
+        <label>DNI</label>
+        <input type="text" class="form-control" formControlName="dni">
+    </div>
+
+    <div class="form-group">
+        <label>Password</label>
+        <input type="password" class="form-control" formControlName="password">
+    </div>
+
+    <div class="form-group">
+        <label>Repeat Password</label>
+        <input type="password" class="form-control" formControlName="repeatPassword">
+    </div>
+
+    <div class="form-group">
+        <label>Email</label>
+        <input type="email" class="form-control" formControlName="email">
+    </div>
+
+    <div class="error" *ngIf="formulario.controls.email.errors && formulario.controls.email.touched">
+        <p>Ingresar un correo válido, ejemplo:<br>example@exa.ex</p>
+    </div>
+
+    <!-- Otra forma -->
+    <!-- <div *ngIf="formulario.controls.email.touched && !formulario.controls.email.valid">
+        <p>Ingresar un correo válido, ejemplo:<br>example@exa.ex</p>
+    </div> -->
+
+    <input type="submit" class="btn btn-block btn-success" value="Enviar" [disabled]="!formulario.valid">
+</form>

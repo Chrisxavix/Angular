@@ -1,0 +1,17 @@
+<section>
+    <div class="containers">
+        <div class="container" *ngFor="let item of recibeDatos">
+            <h5>
+                Nombre: {{item.nombre}} {{item.apellidos}}
+            </h5>
+            
+            <figure>
+                <img class="img" src="{{item.imagen}}" alt="">
+            </figure>
+
+            <p>Email: {{item.email}}</p>
+            <p>Edad:  {{item.edad}}</p>
+            <p>Departamento: {{item.departamento}}</p>
+        </div>
+    </div>
+</section>
