@@ -1,0 +1,19 @@
+<section>
+    <select (change)="selectCountry($event)">
+        <option value="">Todos:</option>
+        <option value="españa">España</option>
+        <option value="reino unido">Reino Unido</option>
+        <option value="chile">Chile</option>
+        <option value="canadá">Canadá</option>
+    </select>
+
+    <div class="escritores">
+        <a class="escritor" *ngFor="let item of arrayEscritores" [routerLink]="['/escritores', item.id]">
+            <h3>{{item.nombre}} {{item.apellidos}}</h3>
+            <figure>
+                <img src="{{item.imagen}}" alt="">
+            </figure>
+            <p>{{item.pais}}</p>
+        </a>
+    </div>
+</section>

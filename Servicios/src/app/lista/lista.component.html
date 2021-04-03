@@ -1,0 +1,21 @@
+<section>
+  <h2>Desde la lista</h2>
+  <div>
+    <h3>Todos</h3>
+    <table>
+      <tr>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+        <th>Edad</th>
+        <th>Estado</th>
+      </tr>
+
+      <tr *ngFor="let item of personas">
+        <td>{{item.nombre}}</td>
+        <td>{{item.apellido}}</td>
+        <td>{{item.edad}}</td>
+        <td>{{item.activo}}</td>
+      </tr>
+    </table>
+  </div>
+</section>

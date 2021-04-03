@@ -1,0 +1,8 @@
+img {
+    width: 160px;
+    height: 190px;
+}
+
+div p::first-letter {
+    text-transform: uppercase;
+}

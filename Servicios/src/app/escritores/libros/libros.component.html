@@ -1,0 +1,11 @@
+<section>
+    <div class="containers">
+        <div class="container" *ngFor="let item of libros">
+            <h2>{{item.titulo}}</h2>
+            <p>Publicado en: {{item.publicado}}</p>
+            <figure>
+                <img src="{{item.imagen}}" alt="">
+            </figure>
+        </div>
+    </div>
+</section>

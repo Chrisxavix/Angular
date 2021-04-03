@@ -1,0 +1,75 @@
+<section>
+  <h2>Principal</h2>
+  <button (click)="agregarPersona()">Agregar Persona</button>
+  <button (click)="personasActivas()">PersonasActivas</button>
+  <h2>Creando un servicio</h2>
+  <div>
+    <h3>Todos</h3>
+    <table>
+      <tr>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+        <th>Edad</th>
+        <th>Estado</th>
+      </tr>
+
+      <tr *ngFor="let item of personas">
+        <td>{{item.nombre}}</td>
+        <td>{{item.apellido}}</td>
+        <td>{{item.edad}}</td>
+        <td>{{item.activo}}</td>
+      </tr>
+    </table>
+  </div>
+
+  <div>
+    <h3>Activos</h3>
+    <table>
+      <tr>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+        <th>Edad</th>
+        <th>Estado</th>
+      </tr>
+
+      <tr *ngFor="let item of activos">
+        <td>{{item.nombre}}</td>
+        <td>{{item.apellido}}</td>
+        <td>{{item.edad}}</td>
+        <td>{{item.activo}}</td>
+      </tr>
+    </table>
+  </div>
+
+  <div>
+    <h3>Falsos</h3>
+    <table>
+      <tr>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+        <th>Edad</th>
+        <th>Estado</th>
+      </tr>
+
+      <tr *ngFor="let item of falsos">
+        <td>{{item.nombre}}</td>
+        <td>{{item.apellido}}</td>
+        <td>{{item.edad}}</td>
+        <td>{{item.activo}}</td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>Componente Lista</h2>
+  <app-lista></app-lista>
+</section>
+
+<section>
+  <h2>Escritores</h2>
+  <a [routerLink]="['/escritores']">Visualizar Escritores</a>
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+</section>

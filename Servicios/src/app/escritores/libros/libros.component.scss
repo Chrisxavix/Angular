@@ -1,0 +1,18 @@
+.containers {
+    display: flex;
+    column-gap: 10px;
+    flex-wrap: wrap;
+    row-gap: 10px;
+}
+
+.container {
+    border: 2px solid gray;
+    min-width: 30%;
+    background-color: rgb(179, 161, 139);
+}
+
+figure img {
+    text-align: center;
+    min-width: 100px;
+    height: 140px;
+}

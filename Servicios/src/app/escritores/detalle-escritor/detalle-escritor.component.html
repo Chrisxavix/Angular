@@ -1,0 +1,10 @@
+<div>
+    <h2>Escritor</h2>
+    <h3>{{escritor?.nombre}} {{escritor?.apellidos}}</h3>
+    <p>{{escritor?.pais}}</p>
+    <figure>
+        <img src="{{escritor?.imagen}}" alt="">
+    </figure>
+</div>
+<a (click)="verLibros()">Ver Libros</a>
+<router-outlet></router-outlet>
