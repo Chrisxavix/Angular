@@ -1,0 +1,40 @@
+<section>
+  <h2>Pipe Currency</h2>
+  <p>Precio: {{ precio | currency:'EUR':'symbol':'1.1-1' }}</p>
+</section>
+
+<section>
+  <h2>Pipe Decimal</h2>
+  <p>Decimal: {{ numeroDecimal | number:'1.2-4' }}</p>
+</section>
+
+<section>
+  <h2>Pipe Date</h2>
+  <p>Fecha Actual: {{ fechaActual | date }}</p>
+  <p>Fecha Actual: {{ fechaActual | date:'short' }}</p>
+  <p>Fecha Actual: {{ fechaActual | date:'long' }}</p>
+  <p>Fecha Actual: {{ fechaActual | date:'dd/MM/yyyy' }}</p>
+  <p>Fecha Actual: {{ fechaActual | date:'dd/LLLL/yyyy' }}</p>
+  <p>Fecha Actual: {{ fechaActual | date:'HH:mm.ss' }}</p>
+</section>
+
+<section>
+  <h2>Pipe Percent</h2>
+  <p>Porcentaje: {{ numberPercet | percent:'1.1-2' }}</p>
+</section>
+
+<section>
+  <h2>Pipe LowerCasePipe, UpperCasePipe y TitleCasePipe</h2>
+  <p>Cadena: {{ cadena }}</p>
+  <p>Cadena: {{ cadena | uppercase }}</p>
+  <p>Cadena: {{ cadena | lowercase }}</p>
+  <p>Cadena: {{ cadena | titlecase }}</p>
+</section>
+
+<!-- Recorta el array -->
+<section>
+  <h2>Pipe Slice</h2>
+  <ul>
+    <li *ngFor="let item of arraySlice | slice:0:2">{{item}}</li>
+  </ul>
+</section>
