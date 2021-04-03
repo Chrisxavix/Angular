@@ -1,0 +1,42 @@
+<!-- La forma de usar con parámetros desde el template -->
+<!-- Agregar este modulo si se requiere: 
+    RouterModule   -->
+    
+<!-- [queryParams]="{ order: 'popular'}" -->
+
+<section>
+    <h1>Rutas, usando <i>[routerLink]="['/contacto']"</i> y <i></i>routerLinkActive="activados"</h1>
+    <div class="rutas">
+        <a [routerLink]="['/acerca']" routerLinkActive="activados">Acerca</a>
+        <a [routerLink]="['/informacion']" routerLinkActive="activados">Información</a>
+        <a [routerLink]="['/contacto']" routerLinkActive="activados">Contacto</a>
+    </div>
+</section>
+
+<section>
+    <h2>
+        Rutas desde el ts
+    </h2>
+    <div class="botones">
+        <button (click)="seleccionBoton('acerca')">Acerca</button>
+        <button (click)="seleccionBoton('informacion')">Información</button>
+        <button (click)="seleccionBoton('contacto')">Contacto</button>
+    </div>
+</section>
+
+<section>
+    <h2>Rutas dinámicas</h2>
+    <p>Al ingresar en el enlace <i>/empleados/9898</i> se recupera el id</p>
+
+<section>
+    <h2>Children routes</h2>
+    <p>Usando rutas hijos del compoente Empleado</p>
+</section>
+
+<section>
+    <h2>Router Guards</h2>
+    <p>Permisos para salir o entrar a un enlace.</p>
+    <p>Se crea un guard active con: ng g guard (nombre-cualquiera</p>
+    <p>Ahí se hace un control, por tomar como ejemplo está un condicional, si es mayor a 1 deja ver acceder a la página</p>
+</section>
+<router-outlet></router-outlet>

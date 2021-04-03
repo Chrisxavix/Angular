@@ -1,0 +1,23 @@
+section {
+    background-color: rgb(128, 173, 158);
+    margin-bottom: 40px;
+}
+
+.rutas {
+    display: flex;
+    flex-direction: column;
+}
+
+.rutas a {
+    text-decoration: none;
+}
+
+.activados {
+    color: rgb(173, 77, 169);
+    background-color: rgb(46, 49, 48);
+}
+
+.botones {
+    display: flex;
+    flex-direction: column;
+}
