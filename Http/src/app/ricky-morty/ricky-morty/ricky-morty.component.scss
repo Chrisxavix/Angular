@@ -1,0 +1,24 @@
+.personaje {
+    border: 1px solid gray;
+    margin: 5px;
+    padding: 5px;
+}
+
+figure{
+    text-align: center;
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+}
+
+/* condicionales */
+
+.vivo {
+    border-color: lightgreen;
+}
+
+.muerto {
+    border-color: tomato;
+}

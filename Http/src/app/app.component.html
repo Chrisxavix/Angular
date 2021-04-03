@@ -1,0 +1,62 @@
+<section>
+  <h2>Petición Get</h2>
+
+  <h4>Por Id</h4>
+  <p>Presionar una caja</p>
+  <div>
+    <h4>Titulo: {{oneItem.title}}</h4>
+    <p>Body: {{oneItem.body}}</p>
+    <p>UserId: {{oneItem.userId}}</p>
+    <button (click)="limpiar()">Limpiar</button>
+  </div>
+
+  <h4>Toda la lista</h4>
+  <button (click)="loadListInitial()">Mostrar lista</button>
+  <button (click)="loadListOcultar()">Ocultar lista</button>
+  <div class="posts" *ngFor="let item of listado" (click)="loadById(item.id)">
+    <div class="post">
+      <h4>Titulo: {{item.title}}</h4>
+      <p>Body: {{item.body}}</p>
+      <p>UserId: {{item.userId}}</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Petición Post</h2>
+  <form [formGroup]="formulario" (ngSubmit)="enviarDatosPost()">
+    <div>
+      <label>Title</label>
+      <br>
+      <input type="text" formControlName="title">
+    </div>
+  
+    <div>
+      <label>Body</label>
+      <br>
+      <input type="text" formControlName="body">
+    </div>
+  
+    <div>
+      <label>UserID</label>
+      <br>
+      <input type="number" formControlName="userId">
+    </div>
+
+    <input type="submit" value="Enviar" [disabled]="!formulario.valid">
+  </form>
+
+<button (click)="actualizar()">Actualizar Post</button>
+
+<button (click)="eliminar()">Eliminar</button>
+</section>
+
+<section>
+<h2>Paises</h2>
+<app-paises></app-paises>
+</section>
+
+<section>
+  <h2>Ricky and Morty</h2>
+  <app-ricky-morty></app-ricky-morty>
+</section>

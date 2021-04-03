@@ -1,0 +1,14 @@
+<section>
+    <div class="containers" >
+        <div class="container" *ngFor="let item of datos">
+            <h3>{{item.name}}</h3>
+            <figure>
+                <img class="img" src="{{item.flag}}" alt="bandera {{item.name}}">
+            </figure>
+            <p>Region: {{item.region}}</p>
+            <p>Zona Horaria: {{item.timezones}}</p>
+            <p>Moneda: {{item.currencies[0].name}}</p>
+            <p>Capital: {{item.capital}}</p>
+        </div>
+    </div>
+</section>

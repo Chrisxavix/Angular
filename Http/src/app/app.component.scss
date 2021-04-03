@@ -1,0 +1,29 @@
+section {
+    background-color: rgb(97, 114, 114);
+}
+
+.posts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: rgb(154, 180, 180);
+    width: 90%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    column-gap: 10px;
+}
+
+.post {
+    background-color: rgb(83, 104, 97);
+    width: 150px;
+    height: auto;
+    border: 2px solid gray;
+    padding: 3px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.post:hover {
+    background-color: rgb(90, 156, 134);
+}

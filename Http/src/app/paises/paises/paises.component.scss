@@ -1,0 +1,27 @@
+.containers {
+    background-color: rgb(151, 135, 113);
+    border: 3px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    column-gap: 5px;
+    row-gap: 5px;
+}
+
+.container {
+    width: 200px;
+    background-color: rgb(53, 70, 64);
+    border: 2px solid gray;
+}
+
+.container h3 {
+    text-align: center;
+}
+
+.img {
+    width: 100px;
+    height: 100px;
+}

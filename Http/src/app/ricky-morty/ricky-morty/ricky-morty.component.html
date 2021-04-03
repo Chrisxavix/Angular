@@ -1,0 +1,20 @@
+<section>
+    <h3>Lista de personajes</h3>
+    <h4>Páginas: {{numPages}}</h4>
+    <h4>Página Actual: {{currentPage}}</h4>
+    <button (click)="cambiarPagina(false)" class="btn btn-primary" [disabled]="currentPage === 1">Anterior</button>
+    <button (click)="cambiarPagina(true)" class="btn btn-primary ml-2" [disabled]="currentPage === numPages">Siguiente</button>
+    <div class="container">
+        <div class="row">
+            <div class="col-6 col-md-3" *ngFor="let item of traeDatos">
+                <div class="personaje" [ngClass]="{vivo: (item.status === 'Alive'), muerto: (item.status === 'Dead')}">
+                    <h3>{{item.name}}</h3>
+                    <figure>
+                        <img class="img" src="{{item.image}}" alt="">
+                    </figure>
+                    <p>{{item.species}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
