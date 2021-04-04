@@ -1,0 +1,13 @@
+<section>
+    <h3>Componente <i style="color: rgb(60, 22, 95);">app-product-form</i></h3>
+    <h4>Usando un FormControl</h4>
+    <p>
+        Email: <br/>
+        <input type="email" [formControl]="emailCtrl">
+    </p>
+    <p>
+        <small *ngIf="emailCtrl.errors?.required && emailCtrl.touched" >El campo es requerido</small>
+    </p>
+    <button type="button" [disabled]="emailCtrl.invalid" (click)="getEmail($event)">Save</button>
+    
+</section>
