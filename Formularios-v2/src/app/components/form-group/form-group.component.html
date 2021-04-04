@@ -1,0 +1,49 @@
+<section>
+    <h3>Componente <i style="color: rgb(60, 22, 95);">app-form-group</i></h3>
+    <h4>Usando un formGroup</h4>
+    <!-- Si estoy validando todo se usa el novalidate, para que el navegador no actue -->
+    <form [formGroup]="form" (ngSubmit)="save($event)" novalidate>
+        <p>
+          Nombre: <br/>
+          <input type="text" formControlName="name">
+        </p>
+        <small class="error" *ngIf="form.get('name').errors?.required && form.get('name').touched" >El campo es requerido</small>
+        <small class="error" *ngIf="form.get('name').errors?.maxlength" >Máximo de 5</small>
+        <small class="error" *ngIf="form.get('name').errors?.minlength" >Mínimo de 3</small>
+        <p>
+          Fecha: <br/>
+          <input type="date" formControlName="date">
+        </p>
+        <p>
+          Email: <br/>
+          <input type="email" formControlName="email">
+        </p>
+        <p>
+          Texto largo: <br/>
+          <textarea cols="30" rows="10" formControlName="text"></textarea>
+          <small>{{ this.form.get('text').value.length }}/80</small>
+        </p>
+        <small class="error" *ngIf="form.get('text').errors?.maxlength" >Máximo de 80</small>
+        
+        <p>
+          Category: <br/>
+          <select formControlName="category">
+            <option value="1">Category 1</option>
+            <option value="2">Category 2</option>
+            <option value="3">Category 3</option>
+          </select>
+        </p>
+        <p>
+          Genero: <br/>
+          <input type="radio" name="gender" formControlName="gender" value="male"> Male<br>
+          <input type="radio" name="gender" formControlName="gender" value="female"> Female<br>
+          <input type="radio" name="gender" formControlName="gender" value="other"> Other
+        </p>
+
+        <!-- Si deseo botones dentro del formulario se usa de tipo botón, para evitar
+        que tome como un submit -->
+        <button type="button" (click)="doSomething()">Action</button> 
+
+        <button type="submit">Guardar</button> 
+    </form>
+</section>
