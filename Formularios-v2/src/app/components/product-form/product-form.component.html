@@ -9,5 +9,4 @@
         <small *ngIf="emailCtrl.errors?.required && emailCtrl.touched" >El campo es requerido</small>
     </p>
     <button type="button" [disabled]="emailCtrl.invalid" (click)="getEmail($event)">Save</button>
-    
 </section>
