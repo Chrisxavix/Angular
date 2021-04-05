@@ -1,0 +1,19 @@
+<section>
+    <h3>Componente <i style="color: rgb(60, 22, 95);">app-validate-email</i></h3>
+    <h4>Usando un formGroup</h4>
+    <form [formGroup]="form" (ngSubmit)="save($event)" novalidate>
+        <p>
+          Email: <br/>
+          <input type="email" formControlName="email">
+        </p>
+        <!-- <p>{{form.get('email').errors | json}}</p> -->
+        <p *ngIf="form.get('email').errors?.email && form.get('email').touched">
+            No es un email
+        </p>
+
+        <p *ngIf="form.get('email').errors?.notAvailable && form.get('email').dirty">
+            Es correo esta ocupado
+        </p>
+        <button type="submit">Guardar</button> 
+    </form>
+</section>
