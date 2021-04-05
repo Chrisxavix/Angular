@@ -11,6 +11,16 @@
         <small class="error" *ngIf="form.get('name').errors?.maxlength" >Máximo de 5</small>
         <small class="error" *ngIf="form.get('name').errors?.minlength" >Mínimo de 3</small>
         <p>
+          Edad: <br/>
+          <input type="text" formControlName="edad">
+        </p>
+        <!-- Para revisar los errores con el pipe -->
+        <div>
+          <p>Si no tiene errores retorna null, caso contrario retorna un json</p>
+          {{form.get('edad').errors | json}}
+        </div>
+        <small class="error" *ngIf="form.get('edad').errors?.min && form.get('edad').touched">Mínimo 18 años</small>
+        <p>
           Fecha: <br/>
           <input type="date" formControlName="date">
         </p>

@@ -17,6 +17,8 @@ export class FormGroupComponent implements OnInit {
 
     this.form = this.FormBuilder.group({
       name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(5)]],
+      /* Min para que sea de mínimo 18 años */
+      edad: ['', [Validators.min(18)]],
       date: ['', [Validators.required]],
       email: ['', [Validators.email]],
       text: ['', [Validators.maxLength(80)]],
