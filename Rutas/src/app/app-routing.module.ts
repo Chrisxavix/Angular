@@ -30,7 +30,14 @@ pathMatch: 'prefix' significa que se elige la primera ruta donde la ruta coincid
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,
+    /* Para poder usar anclas */
+    {
+      onSameUrlNavigation: "ignore",
+      anchorScrolling:'enabled',
+      scrollPositionRestoration: 'enabled'
+    }
+    )],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
