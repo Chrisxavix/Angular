@@ -16,7 +16,10 @@ export class ToastTestComponent implements OnInit {
   }
 
   showSuccess() {
-    this.toastr.success('Hello world!', 'Toastr fun!');
+    this.toastr.success('Hello world!', 'Toastr fun!', {
+      progressBar: true,
+      timeOut: 2000
+    });
   }
 
   showInfo() {
@@ -25,6 +28,12 @@ export class ToastTestComponent implements OnInit {
 
   showError() {
     this.toastr.error('Hello world!', 'Toastr fun!');
+  }
+
+  showWarm() {
+    this.toastr.warning('Hello world!', 'Toastr fun!', {
+      
+    });
   }
 
 }
