@@ -19,4 +19,12 @@ export class ToastTestComponent implements OnInit {
     this.toastr.success('Hello world!', 'Toastr fun!');
   }
 
+  showInfo() {
+    this.toastr.info('Hello world!', 'Toastr fun!');
+  }
+
+  showError() {
+    this.toastr.error('Hello world!', 'Toastr fun!');
+  }
+
 }
