@@ -15,7 +15,10 @@ import { ToastTestComponent } from './toast-test/toast-test.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot(),
+    ToastrModule.forRoot({
+      /* preventDuplicates evita que se genere cadena de notificaciones */
+      /* preventDuplicates: true, */
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
