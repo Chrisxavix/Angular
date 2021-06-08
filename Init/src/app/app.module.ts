@@ -19,6 +19,7 @@ import { CronometroOutputComponent } from './cronometro-output/cronometro-output
 import { FormsModule } from '@angular/forms';
 import { FormularioComponent } from './comunicacion/formulario/formulario.component';
 import { ListaComponent } from './comunicacion/lista/lista.component';
+import { ViewChildComponent } from './view-child/view-child.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { ListaComponent } from './comunicacion/lista/lista.component';
     CronometroOutputComponent,
     FormularioComponent,
     ListaComponent,
+    ViewChildComponent,
   ],
   imports: [
     BrowserModule,
